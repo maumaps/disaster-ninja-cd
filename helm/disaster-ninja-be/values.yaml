@@ -30,13 +30,13 @@ resources:
   main:
     requests:
       cpu: 1
-      memory: 4G
+      memory: 1G
     limits:
       memory: 16G
   notifier:
     requests:
       cpu: 1
-      memory: 2G
+      memory: 1G
     limits:
       memory: 3G
 

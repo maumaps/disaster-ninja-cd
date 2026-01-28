@@ -25,13 +25,13 @@ resources:
   app:
     requests:
       cpu: 1
-      memory: 7Gi
+      memory: 2Gi
     limits:
       memory: 16Gi
   redis:
     requests:
       cpu: 100m
-      memory: 6Gi
+      memory: 2Gi
     limits:
       memory: 16Gi
 

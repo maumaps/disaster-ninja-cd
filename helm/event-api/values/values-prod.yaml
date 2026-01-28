@@ -64,4 +64,4 @@ normalizationProviders: gdacsAlert, gdacsAlertGeometry, storms.noaa, wildfire.ca
 eventCombinationProviders: gdacsAlert, gdacsAlertGeometry, storms.noaa, wildfire.calfire, usgs.earthquake,
   wildfire.perimeters.nifc, wildfire.locations.nifc, cyclones.nhc-at.noaa, cyclones.nhc-ep.noaa, cyclones.nhc-cp.noaa
 
-enrichmentThreads: 15
+enrichmentThreads: 3
