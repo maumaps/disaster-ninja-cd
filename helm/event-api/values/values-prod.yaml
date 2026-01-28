@@ -58,10 +58,10 @@ awsSqsEnabled: true
 
 feignUserAgent: 'Event API PROD'
 
-normalizationProviders: gdacsAlert, gdacsAlertGeometry, kontur.events, storms.noaa, wildfire.calfire, usgs.earthquake,
+normalizationProviders: gdacsAlert, gdacsAlertGeometry, storms.noaa, wildfire.calfire, usgs.earthquake,
   wildfire.perimeters.nifc, wildfire.locations.nifc, cyclones.nhc-at.noaa, cyclones.nhc-ep.noaa, cyclones.nhc-cp.noaa
 
-eventCombinationProviders: gdacsAlert, gdacsAlertGeometry, kontur.events, storms.noaa, wildfire.calfire, usgs.earthquake,
+eventCombinationProviders: gdacsAlert, gdacsAlertGeometry, storms.noaa, wildfire.calfire, usgs.earthquake,
   wildfire.perimeters.nifc, wildfire.locations.nifc, cyclones.nhc-at.noaa, cyclones.nhc-ep.noaa, cyclones.nhc-cp.noaa
 
 enrichmentThreads: 15
