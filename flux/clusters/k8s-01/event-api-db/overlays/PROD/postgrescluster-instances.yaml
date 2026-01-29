@@ -10,7 +10,7 @@
           memory: 512Gi
           cpu: '64'
         requests:
-          memory: 8Gi
+          memory: 3Gi
           cpu: '2'
       dataVolumeClaimSpec:
         accessModes:
