@@ -168,7 +168,8 @@ spec:
               value: "no"
             - name: REDIS_PORT
               value: "6379"
-          image: docker.io/bitnami/redis:7.0.3-debian-11-r0
+          image: docker.io/bitnami/redis:latest
+          #image: docker.io/bitnami/redis:7.0.3-debian-11-r0  # pull err: manifest unknown
           imagePullPolicy: IfNotPresent
           livenessProbe:
             exec:
