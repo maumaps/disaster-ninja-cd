@@ -54,18 +54,18 @@
 # 1. Requires fully-qualified instance id of new master
 # 2. New master must be in sink with current master (check via `patronictl list`)
 # 3. Its recommended to retain switchover section, to keep track of last desired master both in code and k8s
-- op: add
-  path: /spec/patroni/switchover
-  value:
-    enabled: true
-    targetInstance: db-event-api-hwn02a-28kg
+#- op: add
+#  path: /spec/patroni/switchover
+#  value:
+#    enabled: true
+#    targetInstance: db-event-api-hwn02a-28kg
     #type: Failover
 ###
 # trigger-switchover annotation triggers actual switchover whenever its updated
 # value is arbitrary, but it's recommended to reference the date of switchover
 # special syntax is used to escape slash with sequence ~1
 # See https://windsock.io/json-pointer-syntax-in-json-patches-with-kustomize/
-- op: add
-  path: /metadata/annotations/postgres-operator.crunchydata.com~1trigger-switchover
-  value: 2025-07-31-hwn02 # reason: planned replica deletion, reverting occasional leadership (#22264)
+#- op: add
+#  path: /metadata/annotations/postgres-operator.crunchydata.com~1trigger-switchover
+#  value: 2025-07-31-hwn02 # reason: planned replica deletion, reverting occasional leadership (#22264)
 ###
