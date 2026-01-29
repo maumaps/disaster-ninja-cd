@@ -7,7 +7,7 @@ image:
   pullPolicy: IfNotPresent
   tag: release-0.15.0.8d9d03b.1
   pullSecretName: nexus8084
-  usePullSecret: false
+  usePullSecret: true
 
 replicas: 1 # do not scale above 1, because keycloak doesn't support it due to issues with session stickiness and non-shared state
 

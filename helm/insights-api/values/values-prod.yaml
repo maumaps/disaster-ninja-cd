@@ -4,8 +4,8 @@
 image:
   tag: release-0.23.0.48c18fb.1
   tagType: ""
-  pullSecretName: none
-  usePullSecret: false
+  pullSecretName: nexus8084
+  usePullSecret: true
 
 replicas: 1
 envName: prod
