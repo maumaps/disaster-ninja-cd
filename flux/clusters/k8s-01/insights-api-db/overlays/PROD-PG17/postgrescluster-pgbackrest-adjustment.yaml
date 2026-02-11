@@ -1,26 +1,26 @@
-- op: add
-  path: /spec/backups/pgbackrest/global/archive-timeout
-  value: '360'
-
-- op: add
-  path: /spec/backups/pgbackrest/global/process-max
-  value: '8'
-
-- op: add
-  path: /spec/backups/pgbackrest/global/archive-push-queue-max
-  value: '400GB'
-
-- op: add
-  path: /spec/backups/pgbackrest/global/spool-path
-  value: '/pgdata/pgbackrest'
-
-- op: add
-  path: /spec/backups/pgbackrest/global/archive-async
-  value: 'y'
-
-- op: add
-  path: /spec/backups/pgbackrest/global/archive-mode
-  value: 'on'
+#- op: add
+#  path: /spec/backups/pgbackrest/global/archive-timeout
+#  value: '360'
+#
+#- op: add
+#  path: /spec/backups/pgbackrest/global/process-max
+#  value: '8'
+#
+#- op: add
+#  path: /spec/backups/pgbackrest/global/archive-push-queue-max
+#  value: '400GB'
+#
+#- op: add
+#  path: /spec/backups/pgbackrest/global/spool-path
+#  value: '/pgdata/pgbackrest'
+#
+#- op: add
+#  path: /spec/backups/pgbackrest/global/archive-async
+#  value: 'y'
+#
+#- op: add
+#  path: /spec/backups/pgbackrest/global/archive-mode
+#  value: 'off'
 
 - op: replace
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/max_wal_size
@@ -89,3 +89,11 @@
 - op: add
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/hot_standby_feedback
   value: 'on'
+
+- op: add
+  path: /spec/patroni/dynamicConfiguration/postgresql/parameters/archive_mode
+  value: 'off'
+
+- op: add
+  path: /spec/patroni/dynamicConfiguration/postgresql/parameters/archive_command
+  value: ''

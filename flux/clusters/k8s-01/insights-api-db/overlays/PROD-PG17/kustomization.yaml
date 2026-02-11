@@ -10,12 +10,6 @@ patchesJson6902:
       version: v1beta1
       kind: PostgresCluster
       name: db-insights-api-pg17
-    path: postgrescluster-s3-backups.yaml
-  - target:
-      group: postgres-operator.crunchydata.com
-      version: v1beta1
-      kind: PostgresCluster
-      name: db-insights-api-pg17
     path: postgrescluster-custom-image.yaml
   - target:
       group: postgres-operator.crunchydata.com
@@ -35,6 +29,12 @@ patchesJson6902:
       kind: PostgresCluster
       name: db-insights-api-pg17
     path: postgrescluster-metadata.yaml
+  #- target:
+  #    group: postgres-operator.crunchydata.com
+  #    version: v1beta1
+  #    kind: PostgresCluster
+  #    name: db-insights-api-pg17
+  #  path: postgrescluster-s3-backups.yaml
 
 generatorOptions:
   disableNameSuffixHash: true

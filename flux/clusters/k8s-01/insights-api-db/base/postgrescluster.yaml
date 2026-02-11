@@ -8,18 +8,18 @@ metadata:
     app.kubernetes.io/name: db-insights-api
     app.kubernetes.io/part-of: insights-api
 spec:
-  backups:
-    pgbackrest:
-      repos:
-        - name: repo1
-          volume:
-            volumeClaimSpec:
-              accessModes:
-                - ReadWriteOnce
-              resources:
-                requests:
-                  storage: 50Gi
-              storageClassName: local-path-regular
+  #backups:
+  #  pgbackrest:
+  #    repos:
+  #      - name: repo1
+  #        volume:
+  #          volumeClaimSpec:
+  #            accessModes:
+  #              - ReadWriteOnce
+  #            resources:
+  #              requests:
+  #                storage: 50Gi
+  #            storageClassName: local-path-regular
   instances:
     - affinity:
         podAntiAffinity:
