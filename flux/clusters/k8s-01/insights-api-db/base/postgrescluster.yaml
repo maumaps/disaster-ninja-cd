@@ -44,7 +44,7 @@ spec:
           memory: 512Gi
           cpu: '64'
         requests:
-          memory: 22Gi
+          memory: 10Gi
           cpu: '2'
       topologySpreadConstraints:
         - maxSkew: 1
