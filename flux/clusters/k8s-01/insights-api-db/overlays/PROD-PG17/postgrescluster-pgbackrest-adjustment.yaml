@@ -32,11 +32,11 @@
 
 - op: replace
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/effective_cache_size
-  value: '384GB'
+  value: '14GB'
 
 - op: replace
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/shared_buffers
-  value: '128GB'
+  value: '8GB'
 
 - op: add
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/temp_buffers
@@ -48,7 +48,7 @@
 
 - op: replace
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/maintenance_work_mem
-  value: '16GB'
+  value: '2GB'
 
 - op: replace
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/wal_compression
@@ -68,7 +68,7 @@
 
 - op: replace
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/max_parallel_maintenance_workers
-  value: '16'
+  value: '4'
 
 - op: replace
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/maintenance_io_concurrency
@@ -76,7 +76,7 @@
 
 - op: replace
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/autovacuum_max_workers
-  value: '8'
+  value: '4'
 
 - op: replace
   path: /spec/patroni/dynamicConfiguration/postgresql/parameters/autovacuum_vacuum_insert_scale_factor
