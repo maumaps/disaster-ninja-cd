@@ -13,8 +13,8 @@ metadata:
     meta.helm.sh/release-name: {{ .Release.Name }}
     meta.helm.sh/release-namespace: {{ .Release.Namespace }}
     nginx.ingress.kubernetes.io/enable-cors: "true"
-    cert-manager.io/cluster-issuer: letsencrypt-production #use letsencrypt-staging for testing
-    acme.cert-manager.io/http01-edit-in-place: "true" #required otherwise ACME challenge can't be completed
+    #cert-manager.io/cluster-issuer: letsencrypt-production #use letsencrypt-staging for testing
+    #acme.cert-manager.io/http01-edit-in-place: "true" #required otherwise ACME challenge can't be completed
     nginx.ingress.kubernetes.io/server-snippet: |
       proxy_bind off;
       location /auth/ {
@@ -41,9 +41,10 @@ metadata:
     {{- end }}
 spec:
   tls:
-  - hosts:
-    - {{ .Values.ingressHost }}
-    secretName: {{ .Values.envName }}-keycloak-tls # < cert-manager will store the created certificate in this secret.
+    enabled: false
+  # - hosts:
+  #   - {{ .Values.ingressHost }}
+  #   secretName: {{ .Values.envName }}-keycloak-tls # < cert-manager will store the created certificate in this secret.
   ingressClassName: {{ .Values.ingressClass }}
   rules:
   - host: {{ .Values.ingressHost }}

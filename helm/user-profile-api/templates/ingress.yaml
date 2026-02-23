@@ -3,8 +3,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    acme.cert-manager.io/http01-edit-in-place: "true" #required otherwise ACME challenge can't be completed
-    cert-manager.io/cluster-issuer: letsencrypt-production #use letsencrypt-staging for testing
+    #acme.cert-manager.io/http01-edit-in-place: "true" #required otherwise ACME challenge can't be completed
+    #cert-manager.io/cluster-issuer: letsencrypt-production #use letsencrypt-staging for testing
     meta.helm.sh/release-name: {{ .Release.Name }}
     meta.helm.sh/release-namespace: {{ .Release.Namespace }}
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
@@ -43,7 +43,8 @@ spec:
             path: /
             pathType: Prefix
   tls:
-    - hosts:
-        - {{ .Values.ingressHost }}
-      secretName: {{ .Values.envName }}-user-profile-api-tls # < cert-manager will store the created certificate in this secret.
+    enabled: false
+    # - hosts:
+    #     - {{ .Values.ingressHost }}
+    #   secretName: {{ .Values.envName }}-user-profile-api-tls # < cert-manager will store the created certificate in this secret.
 {{ end }}

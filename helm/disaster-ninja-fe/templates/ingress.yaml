@@ -12,8 +12,8 @@ metadata:
   annotations:
     meta.helm.sh/release-name: {{ .Release.Name }}
     meta.helm.sh/release-namespace: {{ .Release.Namespace }}
-    cert-manager.io/cluster-issuer: letsencrypt-production #use letsencrypt-staging for testing
-    acme.cert-manager.io/http01-edit-in-place: "true" #required otherwise ACME challenge can't be completed
+    #cert-manager.io/cluster-issuer: letsencrypt-production #use letsencrypt-staging for testing
+    #acme.cert-manager.io/http01-edit-in-place: "true" #required otherwise ACME challenge can't be completed
     nginx.ingress.kubernetes.io/use-forwarded-headers: "true" # allow X-Forwarded-Host for different hostnames
     # if set to "true" there is HTTP 500 for e.g. curl -v http://maps.kontur.io/active/
     # so we do check scheme and redirect manually
@@ -148,11 +148,12 @@ metadata:
 
 spec:
   tls:
-    - hosts:
-      {{- range $i, $h := .Values.ingressHosts }}
-        - {{ $h }}
-      {{- end }}
-      secretName: {{ .Values.envName }}-disaster-ninja-tls
+    enabled: false
+    # - hosts:
+    #   {{- range $i, $h := .Values.ingressHosts }}
+    #     - {{ $h }}
+    #   {{- end }}
+    #   secretName: {{ .Values.envName }}-disaster-ninja-tls
   ingressClassName: {{ .Values.ingressClass }}
   rules:
       {{$envName := .Values.envName }}
